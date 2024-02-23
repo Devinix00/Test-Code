@@ -7,6 +7,8 @@ function App() {
   return (
     <>
       <p data-testid="count">{count}</p>
+      <button data-testid="minus-button">-</button>
+      <button data-testid="plus-button">+</button>
     </>
   );
 }
