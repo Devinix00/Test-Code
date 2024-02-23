@@ -1,25 +1,14 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/todos/"
-        );
+  const [count] = useState<number>(0);
 
-        const jsonData = await response.json();
-        console.log(jsonData);
-      } catch (error) {
-        console.log("fetchData 에러 발생:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  return <></>;
+  return (
+    <>
+      <p data-testid="count">{count}</p>
+    </>
+  );
 }
 
 export default App;
